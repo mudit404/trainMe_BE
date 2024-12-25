@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -88,10 +89,10 @@ WSGI_APPLICATION = "myapp.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("empty"),
-        "USER": os.environ.get("postgres"),
-        "PASSWORD": os.environ.get("1234"),
-        "HOST": os.environ.get("localhost"),
+        "NAME": os.environ.get("train_me_dwv0"),
+        "USER": os.environ.get("mudit"),
+        "PASSWORD": os.environ.get("pxIOh67cgjxkmbeZiRRPM13acS9KiCbM"),
+        "HOST": os.environ.get("dpg-ctlqiqjtq21c73f4msag-a"),
         "PORT": os.environ.get("5432"),
         # "NAME": "empty",
         # "USER": "postgres",
@@ -100,6 +101,7 @@ DATABASES = {
         # "PORT": "5432",
     }
 }
+DATABASES['default'] = dj_database_url.parse("postgresql://mudit:pxIOh67cgjxkmbeZiRRPM13acS9KiCbM@dpg-ctlqiqjtq21c73f4msag-a.oregon-postgres.render.com/train_me_dwv0")
 
 
 # Password validation
